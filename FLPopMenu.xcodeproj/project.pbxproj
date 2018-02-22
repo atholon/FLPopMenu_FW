@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		966430EC2037084E009AA09E /* FLPopMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 966430EA2037084E009AA09E /* FLPopMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		966430F3203708C4009AA09E /* FLPopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966430F2203708C4009AA09E /* FLPopMenu.swift */; };
+		966430F520370930009AA09E /* FLMenuOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966430F420370930009AA09E /* FLMenuOverlay.swift */; };
+		966430F7203709D7009AA09E /* FLMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966430F6203709D7009AA09E /* FLMenuView.swift */; };
+		966430F920370A9B009AA09E /* FLMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966430F820370A9B009AA09E /* FLMenuItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		966430E72037084E009AA09E /* FLPopMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FLPopMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		966430EA2037084E009AA09E /* FLPopMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPopMenu.h; sourceTree = "<group>"; };
 		966430EB2037084E009AA09E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		966430F2203708C4009AA09E /* FLPopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLPopMenu.swift; sourceTree = "<group>"; };
+		966430F420370930009AA09E /* FLMenuOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLMenuOverlay.swift; sourceTree = "<group>"; };
+		966430F6203709D7009AA09E /* FLMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLMenuView.swift; sourceTree = "<group>"; };
+		966430F820370A9B009AA09E /* FLMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLMenuItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +52,11 @@
 		966430E92037084E009AA09E /* FLPopMenu */ = {
 			isa = PBXGroup;
 			children = (
-				966430EA2037084E009AA09E /* FLPopMenu.h */,
 				966430EB2037084E009AA09E /* Info.plist */,
+				966430F2203708C4009AA09E /* FLPopMenu.swift */,
+				966430F420370930009AA09E /* FLMenuOverlay.swift */,
+				966430F6203709D7009AA09E /* FLMenuView.swift */,
+				966430F820370A9B009AA09E /* FLMenuItem.swift */,
 			);
 			path = FLPopMenu;
 			sourceTree = "<group>";
@@ -59,7 +68,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				966430EC2037084E009AA09E /* FLPopMenu.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,7 @@
 				TargetAttributes = {
 					966430E62037084E009AA09E = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966430F7203709D7009AA09E /* FLMenuView.swift in Sources */,
+				966430F920370A9B009AA09E /* FLMenuItem.swift in Sources */,
+				966430F3203708C4009AA09E /* FLPopMenu.swift in Sources */,
+				966430F520370930009AA09E /* FLMenuOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +266,7 @@
 		966430F02037084E009AA09E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -262,18 +276,21 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FLPopMenu/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.imwork.atholon.FLPopMenu;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		966430F12037084E009AA09E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -283,12 +300,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FLPopMenu/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.imwork.atholon.FLPopMenu;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
